@@ -12,7 +12,7 @@
     </div>
     <div class="center_box">
       <router-link to="/page02"><div class="btn_fl"><font-awesome-icon icon="angle-left" />  前へ戻る</div></router-link>
-      <router-link to="/"><div class="btn_fr">次へ進む  <font-awesome-icon icon="angle-right" /></div></router-link>
+      <router-link to="/page04"><div class="btn_fr">次へ進む  <font-awesome-icon icon="angle-right" /></div></router-link>
     </div>
   </div>
 </template>

@@ -5,7 +5,8 @@
       <template v-for="(option, index) in options">
         <label :key= "index">
           <input type="radio" name="gender"
-          :value="option">{{ option }}
+          :value="option"
+          @change="setGender">{{ option }}
         </label>
       </template>
     </div>
@@ -18,6 +19,14 @@ export default {
     return {
       options: ['男性','女性'],
     }
+  },
+  methods: {
+    setGender(event) {
+      this.$store.commit('setGender', event.target.value);
+    }
+  },
+  created() {
+    this.option = this.$store.state.inputGender;
   }
 }
 </script>
