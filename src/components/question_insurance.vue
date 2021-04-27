@@ -7,7 +7,7 @@
           <template v-for="(option, index) in options">
             <label :key= "index">
               <input type="radio" name="insurance"
-              @input="showSecondQuestion"
+              @input="clickQuestion01"
               :value="option">{{ option }}
             </label>
           </template>
@@ -21,7 +21,7 @@
           <template v-for="(option, index) in options">
             <label :key= "index">
               <input type="radio" name="hospitalization"
-              @input="showThirdQuestion"
+              @input="clickQuestion02"
               :value="option">{{ option }}
             </label>
           </template>
@@ -35,7 +35,8 @@
         <template v-for="(option, index) in options">
           <label :key= "index">
             <input type="radio" name="surgery"
-            :value="option">{{ option }}
+            :value="option"
+            @input="setQuestion03">{{ option }}
           </label>
         </template>
         </div>
@@ -59,9 +60,27 @@ export default {
     },
     showThirdQuestion() {
       this.thirdQuestion = true;
+    },
+    setQuestion01(event01) {
+      this.$store.commit('setQuestion01', event01.target.value);
+    },
+    setQuestion02(event02) {
+      this.$store.commit('setQuestion02', event02.target.value);
+    },
+    setQuestion03(event03) {
+      this.$store.commit('setQuestion03', event03.target.value);
+    },
+    clickQuestion01(event01) {
+      this.showSecondQuestion();
+      this.setQuestion01(event01);
+    },
+    clickQuestion02(event02) {
+      this.showThirdQuestion();
+      this.setQuestion02(event02);
     }
   }
 }
+
 </script>
 
 <style>
