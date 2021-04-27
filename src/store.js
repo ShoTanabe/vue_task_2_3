@@ -14,6 +14,16 @@ export default new Vuex.Store({
     inputQuestion03: '',
     inputFreetext: ''
   },
+  getters: {
+    answerGender: state => state.inputGender,
+    answerBirthYear: state => state.inputBirthYear,
+    answerBirthMonth: state => state.inputBirthMonth,
+    answerBirthDay: state => state.inputBirthDay,
+    answerQuestion01: state => state.inputQuestion01,
+    answerQuestion02: state => state.inputQuestion02,
+    answerQuestion03: state => state.inputQuestion03,
+    answerFreetext: state => state.inputFreetext
+  },
   mutations: {
     setGender(state, gender) {
       state.inputGender = gender

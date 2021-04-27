@@ -60,22 +60,22 @@ export default {
   },
   computed: {
     answerGender() {
-      return this.$store.state.inputGender
+      return this.$store.getters.answerGender
     },
     answerBirthday() {
-      return this.$store.state.inputBirthYear + '年 ' + this.$store.state.inputBirthMonth + ' 月 ' + this.$store.state.inputBirthDay + ' 日'
+      return this.$store.getters.answerBirthYear + '年 ' + this.$store.getters.answerBirthMonth + ' 月 ' + this.$store.getters.answerBirthDay + ' 日'
     },
     answerQuestion01() {
-      return this.$store.state.inputQuestion01
+      return this.$store.getters.answerQuestion01
     },
     answerQuestion02() {
-      return this.$store.state.inputQuestion02
+      return this.$store.getters.answerQuestion02
     },
     answerQuestion03() {
-      return this.$store.state.inputQuestion03
+      return this.$store.getters.answerQuestion03
     },
     answerFreetext() {
-      return this.$store.state.inputFreetext
+      return this.$store.getters.answerFreetext
     },
   }
 }
